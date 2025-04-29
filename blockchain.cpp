@@ -1,5 +1,6 @@
 #include <ctime>
 #include <iostream>
+#include <openssl/sha.h>
 #include <string>
 
 using namespace std;
