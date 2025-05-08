@@ -5,22 +5,26 @@ CXXFLAGS = -std=c++11
 # OpenSSL libraries
 LIBS = -lssl -lcrypto
 
-# Target executable
-TARGET = blockchain
-
-# Source files
+# Target directory and files
+OUTDIR = output
+TARGET = $(OUTDIR)/blockchain
 SRC = blockchain.cpp
 
 # Default target
-all: $(TARGET)
+all: $(TARGET) run
 
-# Link the source file directly to create the executable
+# Create output directory and compile
 $(TARGET): $(SRC)
+	mkdir -p $(OUTDIR)
 	$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET) $(LIBS)
 
-# Clean up the executable
+# Run the executable
+run:
+	$(TARGET)
+
+# Clean up output folder
 clean:
-	rm -f $(TARGET)
+	rm -rf $(OUTDIR)
 
 # Rebuild the project
 rebuild: clean all

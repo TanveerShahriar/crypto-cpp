@@ -1,2 +1,25 @@
+# Ignore compiled executables (Windows)
 *.exe
-.vscode
+
+# Ignore object files
+*.o
+*.obj
+
+# Ignore shared libraries
+*.so
+*.dll
+*.dylib
+
+# Ignore binaries
+*.out
+*.a
+
+# Ignore editor-specific files
+.vscode/
+*.swp
+*~
+
+# Ignore build folders
+build/
+bin/
+output/
