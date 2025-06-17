@@ -1,6 +1,6 @@
 # Compiler and flags
 CXX = g++
-CXXFLAGS = -std=c++11
+CXXFLAGS = -std=c++11 -I./include 
 
 # OpenSSL libraries
 LIBS = -lssl -lcrypto
@@ -8,7 +8,7 @@ LIBS = -lssl -lcrypto
 # Target directory and files
 OUTDIR = output
 TARGET = $(OUTDIR)/blockchain
-SRC = blockchain.cpp
+SRC = src/Block.cpp src/Blockchain.cpp src/main.cpp
 
 # Default target
 all: $(TARGET) run
